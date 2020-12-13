@@ -9,4 +9,4 @@ Requirements:
     * the boost library,
     * a Python 3 development environment (tested with Anaconda 4.8.5). 
 
-The library CNN3.so can be compiled on Linux using the script make.sh.
+The library CNN3.so can be compiled on Linux using the script make.sh. The string “~/miniconda3/include/python3.8” may need to be replaced by the path to your Python include libraries.
