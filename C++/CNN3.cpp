@@ -159,6 +159,7 @@ class CNN3{
 			SMs.push_back(SoftMax());
 			SMs[0].load(file);
 			file.close();
+            num_labels = SMs[0].output.size();
 		}
 
 		// forward pass
@@ -255,7 +256,7 @@ class CNN3{
 		// Completes a training step on the image 'image' with label 'label'.
 		// Returns the corss-entropy and accuracy.
 		double_and_int train(d3_array_type image, int label, double learn_rate = 0.005, double p_dropout = 0.) {
-			
+		
 			// forward pass
 			vector<double> output_forward = forward(image, p_dropout);
 	
