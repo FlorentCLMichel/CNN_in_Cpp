@@ -22,6 +22,8 @@ constexpr int prec_write_file = 16;
 std::random_device rd;  
 std::mt19937 gen(rd()); 
 std::normal_distribution<> dis(0.,1.);
+
+// uniform dictribution
 std::uniform_real_distribution<> uni(0.,1.);
 
 struct double_and_int{
