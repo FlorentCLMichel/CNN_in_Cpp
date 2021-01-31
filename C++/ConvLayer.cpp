@@ -1,5 +1,5 @@
 ConvLayer::ConvLayer(int size_filters_, int depth_filters_, int num_filters_, 
-	std::mt19937 gen, std::normal_distribution<> dis) :
+	std::mt19937 &gen, std::normal_distribution<> &dis) :
 		filters(boost::extents[num_filters_][depth_filters_][size_filters_][size_filters_])
 	{
 	size_filters = size_filters_;

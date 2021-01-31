@@ -1,5 +1,5 @@
 SoftMax::SoftMax(int input_len, int output_len, 
-	    	std::mt19937 gen, std::normal_distribution<> dis) : 
+	    	std::mt19937 &gen, std::normal_distribution<> &dis) : 
 		weights(boost::extents[output_len][input_len])
 {
 	// initialize the biases to 0 and the weights to random values

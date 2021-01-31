@@ -1,5 +1,5 @@
 FullCon::FullCon(int input_len, int output_len, 
-	    	std::mt19937 gen, std::normal_distribution<> dis) : 
+	    	std::mt19937 &gen, std::normal_distribution<> &dis) : 
 		weights(boost::extents[output_len][input_len])
 {
 	// initialize the biases to 0., the weights to random values, and keep to 1
@@ -63,8 +63,8 @@ double activation_p(double x){
 	}
 }
 
-vector<double> FullCon::forward(vector<double> &input, std::mt19937 gen, std::uniform_real_distribution<> uni, double p_dropout = 0.){
-	
+vector<double> FullCon::forward(vector<double> &input, std::mt19937 &gen, std::uniform_real_distribution<> &uni, double p_dropout = 0.){
+
 	// clear the vector of totals
 	totals.clear();
 

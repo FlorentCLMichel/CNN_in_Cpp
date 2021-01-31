@@ -292,7 +292,7 @@ class ConvLayer{
 		ConvLayer(){}
 
 		ConvLayer(int size_filters_, int depth_filters_, int num_filters_, 
-			std::mt19937 gen, std::normal_distribution<> dis);
+			std::mt19937 &gen, std::normal_distribution<> &dis);
 		
 		// save the layer to a file
 		void save(ofstream& file);
@@ -405,7 +405,7 @@ class FullCon{
 		FullCon(){}
 
 		FullCon(int input_len, int output_len, 
-			    	std::mt19937 gen, std::normal_distribution<> dis);
+			    	std::mt19937 &gen, std::normal_distribution<> &dis);
 
 		vector<double> last_input;
 
@@ -416,7 +416,7 @@ class FullCon{
 		void load(ifstream& file);
 	
 		// forward pass
-		vector<double> forward(vector<double> &input, std::mt19937 gen, std::uniform_real_distribution<> uni, double p_dropout);
+		vector<double> forward(vector<double> &input, std::mt19937 &gen, std::uniform_real_distribution<> &uni, double p_dropout);
 			
 		// Performs a backward pass of the softmax layer and returns the loss 
 		// gradient with respect to the input.
@@ -433,14 +433,15 @@ class SoftMax{
 
 		d2_array_type weights;
 		vector<double> biases;
-		vector<double> output;
-		
+	
 	public:	
+		
+        vector<double> output;
 
 		SoftMax(){}
 
 		SoftMax(int input_len, int output_len, 
-			    	std::mt19937 gen, std::normal_distribution<> dis);
+			    	std::mt19937 &gen, std::normal_distribution<> &dis);
 
 		vector<double> last_input;
 
